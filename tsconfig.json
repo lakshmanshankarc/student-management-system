@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "app/attendance/GetAttendance.jsx", "app/attendance/page.jsx", "app/attendance/post/page.jsx", "app/details/GetD.jsx", "app/details/page.jsx", "app/details/profile/page.jsx", "app/components/Signup.jsx", "app/marks/GetMarks.jsx", "app/marks/page.jsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
