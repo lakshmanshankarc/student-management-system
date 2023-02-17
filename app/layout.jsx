@@ -1,5 +1,6 @@
 import './globals.css'
-
+import Navbar from '../libs/global/Navbar'
+import Sidebar from '../libs/global/Sidebar'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -8,7 +9,11 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        <Sidebar />
+        {children}
+      </body>
     </html>
   )
 }

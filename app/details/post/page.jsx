@@ -1,5 +1,5 @@
 import React from 'react'
-import PostDetails from "../../libs/PostDetails";
+import PostDetails from "../../../libs/PostDetails";
 function page() {
     return (
         <div>

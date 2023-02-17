@@ -22,7 +22,7 @@ export default async function handler(req, res) {
                 }
                 const match = await bcrypt.compare(password, hashed);
                 if (match) {
-                    const token = jwt.sign(user, process.env.JWT_SECRET, { expiresIn: '1h' });
+                    const token = jwt.sign(user, process.env.JWT_SECRET);
                     res.status(200).json({ token: token, user: user });
                 } else {
                     res.status(401).json('Unauthorized')

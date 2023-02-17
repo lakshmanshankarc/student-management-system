@@ -28,7 +28,7 @@ function GetMarks() {
             <div className=' w-full'>
                 <h1>Student Marks</h1>
                 {
-                    details.map((detail: any) => {
+                    details.map((detail) => {
                         return (
                             <div className='w-full'>
                                 <h1>Student Name: {detail.email}</h1>

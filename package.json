@@ -14,7 +14,6 @@
     "bcrypt": "^5.1.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
-    "googleapis": "^110.0.0",
     "jsonwebtoken": "^9.0.0",
     "mysql2": "^3.1.0",
     "next": "13.1.6",
