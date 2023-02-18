@@ -13,16 +13,13 @@ function GetMarks() {
                 console.log(err)
             })
     }, [])
-
-    console.log(details)
     if (details.length === 0) {
         return (
-            <div>
-                <h1>Loading...</h1>
+            <div className=' w-full h-screen flex items-center justify-center'>
+                <h1 className=' font-RobotoMono text-2xl text-zinc-50'>Loading...</h1>
             </div>
         )
     }
-
     else if (details.length === 1) {
         return (
             <div className=' w-full'>

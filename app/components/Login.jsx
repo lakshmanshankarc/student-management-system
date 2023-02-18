@@ -14,7 +14,7 @@ function Signup() {
         window.location.href = "/"
     }
     return (
-        <div className=' w-full py-14 bg-slate-900 h-screen'>
+        <div className=' w-full py-14 flex items-center h-screen'>
             <div className=' w-full flex flex-col justify-center items-center'>
                 <form onSubmit={handleSubmit} className='login flex flex-col px-10 bg-slate-200 py-10 w-4/12 rounded-lg '>
                     <h1 className=" font-extrabold flex items-center justify-center text-purple-500 text-4xl font-RobotoMono">Login Page</h1>

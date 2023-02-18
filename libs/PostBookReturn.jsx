@@ -22,27 +22,26 @@ function PostBookReturn() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         let res = await axios.post('/api/user/libraryreturn', user)
-        console.log(res)
-        console.log(user);
+        alert("Book Returned Successfully")
     }
 
     return (
-        <div>
-            <div>
-                <h1 className=" flex justify-center font-poppins text-2xl text-teal-500">Student Library Book Issue</h1>
-                <form onSubmit={handleSubmit} className='SignUp'>
+        <div lassName=' w-full h-screen flex justify-center items-center'>
+            <div className=' w-full flex flex-col justify-center items-center'>
+                <h1 className=" flex justify-center text-4xl text-pink-500 font-RobotoMono font-extrabold">Return Book</h1>
+                <form onSubmit={handleSubmit} className=' w-2/5 bg-gray-100 p-10 rounded-xl '>
 
                     <div className="flex flex-col">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" name="email" id="email" onChange={(e) => setUser({ ...user, email: e.target.value })} />
+                        <label htmlFor="email" className=' text-xl font-RobotoMono '>Email</label>
+                        <input type="email" name="email" id="email" onChange={(e) => setUser({ ...user, email: e.target.value })} className=' p-2 m-1 bg-slate-200 rounded-md' />
                     </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="bookName">Book Name</label>
-                        <input type="text" name="bookname" id="bookName" onChange={(e) => setUser({ ...user, bookname: e.target.value })} />
+                        <label htmlFor="bookName" className=' text-xl font-RobotoMono '>Book Name</label>
+                        <input type="text" name="bookname" id="bookName" onChange={(e) => setUser({ ...user, bookname: e.target.value })} className=' p-2 m-1 bg-slate-200 rounded-md' />
                     </div>
 
-                    <button type="submit">Issue Book</button>
+                    <button type="submit" className=' p-2 rounded font-RobotoMono bg-fuchsia-400 w-full'>Return Book</button>
                 </form>
             </div>
         </div>

@@ -1,9 +1,11 @@
 import React from 'react'
-import Signup from "../components/Signup"
+import GetD from "./GetD"
 function page() {
     return (
         <div>
-            <Signup />
+            <GetD />
+            <GetD />
+            <GetD />
         </div>
     )
 }

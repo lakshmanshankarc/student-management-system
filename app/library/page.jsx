@@ -1,8 +1,10 @@
 import React from 'react'
-
+import GetLibs from "./GetLibs"
 function page() {
     return (
-        <div>Library Home Page</div>
+        <div>Library Home
+            <GetLibs />
+        </div>
     )
 }
 

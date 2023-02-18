@@ -22,32 +22,25 @@ function PostBooks() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         let res = await axios.post('/api/user/library', user)
-        console.log(res)
-        console.log(user);
+        alert("Book Borrowed Successfully")
     }
 
-    const handleReturnSubmit = async (e) => {
-        e.preventDefault()
-        let res = await axios.post('/api/user/libraryrreturn', user)
-        console.log(res)
-    }
     return (
-        <div>
-            <div>
-                <h1 className=" flex justify-center font-poppins text-2xl text-teal-500">Student Library Book Issue</h1>
-                <form onSubmit={handleSubmit} className='SignUp'>
-
+        <div className=' w-full h-screen flex justify-center items-center'>
+            <div className=' w-9/12 flex flex-col justify-center items-center'>
+                <h1 className=" flex justify-center text-4xl text-pink-500 font-RobotoMono font-extrabold">Borrow Book</h1>
+                <form onSubmit={handleSubmit} className=' w-2/5 bg-gray-100 p-10 rounded-xl '>
                     <div className="flex flex-col">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" name="email" id="email" onChange={(e) => setUser({ ...user, email: e.target.value })} />
+                        <label htmlFor="email" className=' text-xl font-RobotoMono '>Email</label>
+                        <input type="email" name="email" id="email" onChange={(e) => setUser({ ...user, email: e.target.value })} className=' p-2 m-1 bg-slate-200 rounded-md' />
                     </div>
 
                     <div className="flex flex-col">
-                        <label htmlFor="bookName">Book Name</label>
-                        <input type="text" name="bookname" id="bookName" onChange={(e) => setUser({ ...user, bookname: e.target.value })} />
+                        <label htmlFor="bookName" className=' text-xl font-RobotoMono '>Book Name</label>
+                        <input type="text" name="bookname" id="bookName" onChange={(e) => setUser({ ...user, bookname: e.target.value })} className=' p-2 m-1 bg-slate-200 rounded-md' />
                     </div>
 
-                    <button type="submit">Issue Book</button>
+                    <button type="submit" className=' p-2 rounded font-RobotoMono bg-fuchsia-400 w-full'>Post </button>
                 </form>
             </div>
         </div>

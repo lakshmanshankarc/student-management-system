@@ -19,8 +19,8 @@ function Signup() {
     }
     return (
         <div className=' w-full h-screen scroll-smooth scroll-pl-6'>
-            <div className=' w-full h-full justify-center items-center py-14 bg-black'>
-                <form onSubmit={handleSubmit} className='SignUp h-full py-10 flex flex-col bg-slate-900 items-center'>
+            <div className=' w-full h-full justify-center items-center py-14'>
+                <form onSubmit={handleSubmit} className='SignUp h-full py-10 flex flex-col items-center'>
                     <div className=" w-2/6 flex flex-col p-10 rounded-xl bg-slate-200 ">
                         <h1 className=" flex justify-center font-poppins text-5xl p-2 font-extrabold text-fuchsia-600 border-teal-500">Sign up</h1>
 

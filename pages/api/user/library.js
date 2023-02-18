@@ -29,7 +29,7 @@ export default async function handler(req, res) {
         verify(token, process.env.JWT_SECRET, async (err, user) => {
             if (err) res.status(401).json({ 'Unauthorized': err })
             if (user.role === 'student') {
-                getSingleUserBooks(req, res);
+                getSingleUserBooks(req, res, user.email);
             }
             else if (user) {
                 getAllUserBooks(req, res);
@@ -42,7 +42,6 @@ function PostBookIssued(req, res) {
     const { email, bookname } = req.body;
     console.log(bookname);
     const issueDate = new Date();
-
     const sql = `INSERT INTO StudentLibrary (email, bookName, issuedate) VALUES ('${email}', '${bookname}', '${issueDate}')`;
     pool.query(sql, (err, result) => {
         if (err) {
@@ -56,16 +55,14 @@ function PostBookIssued(req, res) {
 }
 
 
-function getSingleUserBooks(req, res) {
-    const { email } = req.body;
+function getSingleUserBooks(req, res, email) {
     const sql = `SELECT * FROM StudentLibrary WHERE email = '${email}'`;
     pool.query(sql, (err, result) => {
         if (err) {
-            console.log(err);
             res.status(500).json({ 'Error': err })
         }
         else {
-            res.status(200).json({ 'Success': result })
+            res.status(200).json({ 'student': result })
         }
     });
 }
@@ -75,11 +72,10 @@ function getAllUserBooks(req, res) {
     const q = `SELECT * FROM StudentLibrary`;
     pool.query(q, (err, result) => {
         if (err) {
-            console.log(err);
             res.status(500).json({ 'Error': err })
         }
         else {
-            res.status(200).json({ 'Success': result })
+            res.status(200).json({ 'teacher': result })
         }
     }
     );

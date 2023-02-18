@@ -22,24 +22,24 @@ function PostAttendance() {
         let res = await axios.post('/api/user/attendance', user)
         console.log(res)
         console.log(user);
+        alert('Attendance Posted')
     }
     return (
         <div>
-            <div>
-                <h1 className=" flex justify-center font-poppins text-2xl text-teal-500">User Sign Up Page</h1>
-                <form onSubmit={handleSubmit} className='SignUp'>
-
+            <div className='w-full h-screen flex items-center justify-center flex-col'>
+                <h1 className=" flex justify-center text-4xl font-RobotoMono font-extrabold text-fuchsia-500">StudentAttendace</h1>
+                <form onSubmit={handleSubmit} className='SignUp flex flex-col p-10 bg-slate-200 rounded-lg'>
                     <div className="flex flex-col">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" name="email" id="email" onChange={(e) => setUser({ ...user, email: e.target.value })} />
+                        <label htmlFor="email" className=' font-RobotoMono p-1 text-lg'>Email</label>
+                        <input type="email" name="email" id="email" onChange={(e) => setUser({ ...user, email: e.target.value })} className=' p-3 m-1 px-5 rounded font-RobotoMono' />
                     </div>
 
-                    <select name="status" onChange={(e) => setUser({ ...user, status: e.target.value })} defaultValue={"present"}>
+                    <select name="status" onChange={(e) => setUser({ ...user, status: e.target.value })} defaultValue="present" className=' p-3 m-1 rounded bg-slate-100'>
                         <option value="absent">Absent</option>
                         <option value="OD">OnDuty</option>
                         <option value="present">Present</option>
                     </select>
-                    <button type="submit">Post Attendance</button>
+                    <button type="submit" className=' p-3 bg-green-400 rounded-md border-none'>Post Attendance</button>
                 </form>
             </div>
         </div>

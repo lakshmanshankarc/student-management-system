@@ -14,7 +14,7 @@ button{
     border-radius: 10%;
 }
 .blurry{
-    background-color: rgba(141, 141, 141, 0.85);
+    background-color: rgba(137, 0, 165, 0.95);
     backdrop-filter: blur(10px);
 }
 .transitioning{
@@ -37,4 +37,10 @@ button{
     background-color: rgba(255, 255, 255, 0.85);
     transform: translateX(0%);
     border-radius: 10px;
+}
+
+.enlarge:hover{
+ transition: 0.3s;
+ transform: scale(1.0);
+ color: #000000;
 }
