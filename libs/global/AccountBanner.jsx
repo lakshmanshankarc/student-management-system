@@ -5,8 +5,13 @@ function AccountBanner() {
     const [user, setUser] = useState(null)
 
     useEffect(() => {
+        try {
         const user = JSON.parse(localStorage.getItem('user'))
         setUser(user)
+        } catch(e){
+           console.log(e);
+        }
+
     }, [])
 
     return (

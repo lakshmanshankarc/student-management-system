@@ -1,16 +1,21 @@
 "use client"
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useCookies } from 'react-cookie'
+
 function Signup() {
     const [user, setUser] = useState({
         email: "",
         password: "",
     })
-
+    const [cookie,SetCookie]=useCookies(["token"]);
     const handleSubmit = async (e) => {
         e.preventDefault()
         let res = await axios.post('http://localhost:3000/api/user/login', user)
-        setLocals(res.data.user, res.data.token)
+        setLocals(res.data.user)
+        if (res.data.token) {
+            SetCookie("token",res.data.token,{path:"/"});
+        }
         window.location.href = "/"
     }
     return (
@@ -42,7 +47,5 @@ async function setLocals(user, token) {
     if (user) {
         localStorage.setItem('user', JSON.stringify(user))
     }
-    if (token) {
-        document.cookie = `token=${token}`
-    }
+   
 }
