@@ -1,7 +1,7 @@
 
 # Student Management System
 
-Student Management System is a simple student management system that allows you to manage students, teachers, and classes.
+Student Management System is a simple student management system that allows  students and teachers to manage the Exam result,attendance and library information
 
 It is built using the Next.js framework and uses a MySQL database.
 
